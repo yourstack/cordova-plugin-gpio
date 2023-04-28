@@ -6,7 +6,7 @@
     <keywords>AndroidThings, raspberry pi 3</keywords>
     <license>MIT</license>
   	<engines>
-    	<engine name="cordova-android" version=">6.0.0"/>
+    	<engine name="cordova-android" version="=7.0.0"/>
   	</engines>
     <js-module name="gpio" src="www/gpio.js">
         <clobbers target="cordova.plugins.gpio" />
@@ -24,8 +24,12 @@
         <config-file target="AndroidManifest.xml" parent="/manifest">
 			<uses-permission android:name="com.google.android.things.permission.USE_PERIPHERAL_IO" />
         </config-file>
+         <config-file target="AndroidManifest.xml" parent="/manifest">
+			<uses-feature android:name="android.hardware.type.pc" />
+        </config-file>
     	<source-file src="src/android/GpioPlugin.java" target-dir="src/org/apache/cordova/things"/>
     	<source-file src="src/android/build-extras.gradle" target-dir="."/>
         <framework src="com.google.android.things:androidthings:1.0"/>
+        <framework src="com.android.support:support-core-utils:26+" />
     </platform>
 </plugin>

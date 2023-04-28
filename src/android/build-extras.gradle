@@ -5,7 +5,11 @@ android {
         }
 	}
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_11
+        targetCompatibility JavaVersion.VERSION_1_11
+    }
+    dependencies {
+        compileOnly 'com.google.android.things:androidthings:1.0'
+        provided 'com.google.android.things:androidthings:1.0'
     }
 }
