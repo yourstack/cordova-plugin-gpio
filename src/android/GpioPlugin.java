@@ -1,7 +1,7 @@
 package org.apache.cordova.things;
 
 import com.google.android.things.pio.Gpio;
-import com.google.android.things.pio.PeripheralManagerService;
+import com.google.android.things.pio.PeripheralManager;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
@@ -17,7 +17,7 @@ import java.util.Map;
  */
 public class GpioPlugin extends CordovaPlugin {
 
-    private PeripheralManagerService service = new PeripheralManagerService();
+    private PeripheralManager service = PeripheralManager.getInstance();
     private Map<String, Gpio> gpioMap = new HashMap<String, Gpio>();
 
     @Override
